@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FinOps Assistance - Recommendations</title>
+    <style>
+      /* Reset CSS */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+      
+      /* Recommendations section */
+      .recommendations-section {
+        padding: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: block;
+      }
+ 
+      .recommendations-section h2 {
+        font-size: 28px;
+        color: #0d1a48;
+        margin-bottom: 30px;
+				margin-top: 30px;
+      }
+
+			.recommendations-title-section h2 {
+        font-size: 28px;
+        color: #0d1a48;
+				padding: 40px;
+        text-align: center;
+      }
+ 
+      .recommendations-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 30px;
+      }
+ 
+      .recommendations-table th,
+      .recommendations-table td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+			.recommendations-table .gke-button {
+				display: flex;
+				justify-content: center;
+			}			
+ 
+      .recommendations-table th {
+        background-color: #1a6294;
+        color: white;
+      }
+ 
+      .recommendations-table tr:nth-child(odd) {
+        background-color: #f0f0f0;
+      }
+ 
+      .recommendations-table button {
+        background-color: #1a6294;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      
+      /* Navigation */
+      .navigation {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+      }
+      
+      .back-button {
+        background-color: #888;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      
+      /* Responsive */
+      @media (max-width: 768px) {
+        .recommendations-table {
+          font-size: 14px;
+        }
+ 
+        .recommendations-table th,
+        .recommendations-table td {
+          padding: 8px;
+        }
+      }
+			/* Breadcrumb */
+			.breadcrumb {
+				display: flex;
+				align-items: center;
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
+
+			.breadcrumb li {
+				display: flex;
+				align-items: center;
+				color: #6b7280; /* gray-500 */
+			}
+
+			.breadcrumb li.active {
+				font-weight: bold;
+				color: #111827; /* gray-900 */
+			}
+
+			.breadcrumb li + li::before {
+				content: "›";
+				margin: 0 0.5rem;
+				color: #9ca3af; /* gray-400 */
+			}
+
+			.breadcrumb a {
+				text-decoration: none;
+				color: inherit;
+			}
+
+			.breadcrumb a:hover {
+				text-decoration: underline;
+			}
+    </style>
+  </head>
+  <body>
+		<div class="recommendations-title-section">
+      <h2>FinOps Assistance</h2>
+		</div>
+
+    <section class="recommendations-section" id="recommendations-section">
+			<nav aria-label="Breadcrumb">
+				<ul class="breadcrumb">
+					<li><a href="#">Provider & billing input</a></li>
+					<li class="active">Recommendations</li>
+					<li><a href="#">Optimizations</a></li>
+				</ul>
+			</nav>
+      <h2>Recommended actions</h2>
+      <table class="recommendations-table">
+        <thead>
+          <tr>
+            <th>Action</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Reservation recommendations</td>
+            <td class="gke-button"><button class="details-btn">Details</button></td>
+          </tr>
+          <tr>
+            <td>GKE Optimization</td>
+            <td class="gke-button">
+              <button class="details-btn" id="gke-button">Details</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Storage Optimization</td>
+            <td class="gke-button"><button class="details-btn">Details</button></td>
+          </tr>
+          <tr>
+            <td>BQ Recommendations</td>
+            <td class="gke-button"><button class="details-btn">Details</button></td>
+          </tr>
+          <tr>
+            <td>Spend commitment recommendations</td>
+            <td class="gke-button"><button class="details-btn">Details</button></td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <div class="navigation">
+        <button class="back-button" id="back-button">Retour aux résultats</button>
+      </div>
+    </section>
+ 
+    <script>
+      // DOM Elements
+      const gkeButton = document.getElementById("gke-button");
+      const backButton = document.getElementById("back-button");
+      
+      // Show GKE section when GKE button is clicked
+      gkeButton.addEventListener("click", () => {
+        // Redirection vers la page GKE Optimizations
+        window.location.href = "gke-optimizations.html";
+      });
+      
+      // Return to results page
+      backButton.addEventListener("click", () => {
+        window.location.href = "index.html";
+      });
+    </script>
+  </body>
+</html>
