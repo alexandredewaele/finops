@@ -24,7 +24,6 @@
         max-width: 1200px;
         margin: 0 auto;
         display: block;
-        background-color: #f0f0f0;
         border-radius: 8px;
       }
 
@@ -37,9 +36,6 @@
 			.gke-title-section h2 {
         font-size: 28px;
         color: #0d1a48;
-				/* padding: 18px; */
-				/* margin: 0; */
-				margin-bottom: 4em;
         text-align: center;
       }
  
@@ -49,7 +45,6 @@
         align-items: center;
         margin-bottom: 20px;
         padding: 15px;
-        background-color: #f0f0f0;
       }
  
       .optimization-text {
@@ -72,9 +67,12 @@
       
       /* Navigation */
       .navigation {
-        display: flex;
+        /* display: flex;
         justify-content: space-between;
-        margin-top: 30px;
+        margin-top: 30px; */
+        padding: 40px;
+        margin: 0 135px;
+        display: block;
       }
       
       .back-button {
@@ -85,6 +83,7 @@
         border-radius: 4px;
         cursor: pointer;
         font-weight: bold;
+				margin-left: 20px;
       }
 
       /* Popup Styles */
@@ -140,10 +139,6 @@
       .popup-content .nodepool-content {
         line-height: 1.6;
       }
-
-      /* .popup-content .nodepool-content .content-divider {
-        margin: 0;
-      } */
 
       .popup-content .nodepool-content p {
         font-weight: bold;
@@ -216,7 +211,7 @@
 			.breadcrumb li + li::before {
 				content: "›";
 				margin: 0 0.5rem;
-				color: #9ca3af; /* gray-400 */
+				color: #9ca3af;
 			}
 
 			.breadcrumb a {
@@ -234,14 +229,14 @@
 		<div class="gke-title-section">
       <h2>FinOps Assistance</h2>
 		</div>
+    <section class="gke-section" id="gke-section">
 			<nav aria-label="Breadcrumb">
 				<ul class="breadcrumb">
-					<li><a href="#">Provider & billing input</a></li>
-					<li class="active">Recommendations</li>
-					<li><a href="#">Optimizations</a></li>
+					<li><a href="index.html">Provider & billing input</a></li>
+					<li><a href="recommendations.html">Recommendations</a></li>
+					<li class="active">GKE Optimizations</li>
 				</ul>
 			</nav>
-    <section class="gke-section" id="gke-section">
       <h2>GKE Optimizations</h2>
       <div class="optimization-item">
         <div class="optimization-text">
@@ -271,10 +266,10 @@
         </button>
       </div>
       
-      <div class="navigation">
-        <button class="back-button" id="back-button">Retour aux recommandations</button>
-      </div>
     </section>
+      <div class="navigation">
+        <button class="back-button" id="back-button"> &lt; &nbsp; Retour aux recommandations</button>
+      </div>
  
     <!-- Popup for Nodepool Shutdown -->
     <div class="popup-overlay" id="nodepool-popup">

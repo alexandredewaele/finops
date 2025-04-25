@@ -31,56 +31,13 @@
         box-sizing: border-box;
         font-family: Arial, sans-serif;
       }
-      .login-btn {
-        background: none;
-        border: none;
-        color: #333;
-        font-weight: bold;
-        cursor: pointer;
-      }
- 
-      .demo-btn {
-        background-color: #0078d7;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 4px;
-        font-weight: bold;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-      }
- 
-      .demo-btn i {
-        margin-right: 8px;
-      }
- 
-      /* Hero section */
-      .hero {
-        background-color: #f9f9f9;
-        padding: 60px 40px;
-        text-align: center;
-      }
- 
-      .hero h1 {
-        font-size: 48px;
-        color: #0d1a48;
-        margin-bottom: 20px;
-      }
- 
-      .hero p {
-        font-size: 18px;
-        color: #555;
-        max-width: 900px;
-        margin: 0 auto 30px;
-        line-height: 1.6;
-      }
  
       /* FinOps section */
       .finops-section {
         padding: 40px;
         max-width: 1200px;
         margin: 0 auto;
+        display: block;
       }
  
       .finops-section h2 {
@@ -94,10 +51,16 @@
         display: flex;
         flex-direction: column;
         gap: 20px;
-        max-width: 800px;
-        margin: 0 auto;
+        max-width: 600px;
+				margin-top: 5em;
+    		margin-bottom: 2em;
+
       }
  
+			nav {
+				margin-bottom: 20px;
+			}
+
       .form-group {
         display: flex;
         align-items: center;
@@ -109,6 +72,13 @@
         font-weight: bold;
         text-align: right;
       }
+
+			.form-btn {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+			}
  
       .form-group select,
       .form-group .upload-btn {
@@ -139,13 +109,20 @@
  
       /* Results section */
       .results-section {
+        max-width: 1200px;
+        display: none;
+      }
+
+			.results-section h3 {
+				font-size: 28px;
+				color: #0d1a48;
+				margin-bottom: 30px;
+			}
+ 
+      .results-section.active {
         padding: 40px;
         max-width: 1200px;
         margin: 0 auto;
-        display: none;
-      }
- 
-      .results-section.active {
         display: block;
       }
  
@@ -184,12 +161,14 @@
  
       .results-table th.sort-asc::after {
         content: "▲";
-        font-size: 12px;
+        font-size: 12px;				
+				padding-bottom: 16px;
       }
  
       .results-table th.sort-desc::after {
         content: "▼";
         font-size: 12px;
+				padding-bottom: 16px;
       }
  
       .results-table tr:nth-child(even) {
@@ -228,10 +207,6 @@
         .form-group label {
           width: 100%;
           text-align: left;
-        }
- 
-        .hero h1 {
-          font-size: 36px;
         }
  
         .results-table {
@@ -285,9 +260,8 @@
       <div class="finops-form">
 		<nav aria-label="Breadcrumb">
 			<ul class="breadcrumb">
-				<li><a href="#">Provider & billing input</a></li>
-				<li><a href="#">Recommendations</a></li>
-				<li class="active">Optimizations</li>
+				<li class="active">Provider & billing input</li>
+				<li><a href="#" style="pointer-events: none; color: #9ca3af;">Recommendations</a></li>
 			</ul>
   	</nav>
         <div class="form-group">
@@ -305,12 +279,14 @@
           <label for="billing-data">Upload your billing data:</label>
           <div class="upload-btn" id="upload-billing">Choose file</div>
         </div>
-        <button class="analyze-btn" id="analyze-button">Analyze</button>
       </div>
+				<div class="form-btn">
+        	<button class="analyze-btn" id="analyze-button">Analyze</button>
+				</div>
     </section>
  
     <section class="results-section" id="results-section">
-      <div class="sort-info">Click on any column header to sort the table</div>
+			<h3>Billing summary</h3>
       <table class="results-table" id="results-table">
         <thead>
           <tr>
@@ -405,6 +381,7 @@
           </tr>
         </tbody>
       </table>
+      <div class="sort-info">Click on any column header to sort the table</div>
       <button class="analyze-btn" id="recommendations-button">
         Show Recommendations
       </button>
